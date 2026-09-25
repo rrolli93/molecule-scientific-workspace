@@ -1,0 +1,277 @@
+/* The one thing on the page that should feel obvious. Everything the atlas
+   knows sits behind this box; the box itself stays a box. */
+.ask {
+  border: 1px solid #35435a;
+  background: #101a2c;
+  padding: 26px 28px 24px;
+  margin: 24px 0 0;
+}
+.ask-title {
+  font:
+    500 21px/1.2 "Helvetica Neue",
+    Arial,
+    sans-serif;
+  letter-spacing: -0.5px;
+  color: #eef2fa;
+  margin: 0 0 15px;
+}
+.ask-form {
+  display: flex;
+  gap: 10px;
+}
+.ws .ask-form input {
+  flex: 1;
+  min-width: 0;
+  background: #0a1220;
+  border: 1px solid #44536e;
+  color: #eef2fa;
+  padding: 13px 15px;
+  font:
+    14px/1.4 "Helvetica Neue",
+    Arial,
+    sans-serif;
+  border-radius: 0;
+}
+.ws .ask-form input::placeholder {
+  color: #7385a3;
+}
+.ws .ask-form input:focus-visible {
+  outline: 2px solid var(--obs-acid, #d6ef71);
+  outline-offset: 1px;
+  border-color: transparent;
+}
+.ws .ask-form button {
+  background: #d6ef71;
+  border: 1px solid #d6ef71;
+  color: #162014;
+  font:
+    600 13px/1 "Helvetica Neue",
+    Arial,
+    sans-serif;
+  padding: 0 24px;
+  cursor: pointer;
+  border-radius: 0;
+}
+.ws .ask-form button:hover {
+  background: #e7ffa0;
+}
+.ask-suggestions {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 14px 0 0;
+  padding: 0;
+}
+.ws .ask-suggestions button {
+  background: none;
+  border: 1px solid #44536e;
+  color: #b9c7de;
+  font:
+    11px/1 ui-monospace,
+    monospace;
+  padding: 8px 12px;
+  cursor: pointer;
+}
+.ws .ask-suggestions button:hover {
+  border-color: #d6ef71;
+  color: #d6ef71;
+}
+.ask-answer {
+  margin-top: 20px;
+  border-top: 1px solid #2b374c;
+  padding-top: 20px;
+}
+.ask-label {
+  display: block;
+  font:
+    9px ui-monospace,
+    monospace;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #8e9db8;
+  margin-bottom: 8px;
+}
+.ask-state {
+  border-left: 3px solid #9aa3b2;
+  padding-left: 16px;
+  margin-bottom: 22px;
+}
+.ask-state-recorded {
+  border-left-color: #6fbf4f;
+}
+.ask-state-unconfirmed,
+.ask-state-open {
+  border-left-color: #e0a63f;
+}
+.ask-state-absent {
+  border-left-color: #d1655a;
+}
+.ask-recorded {
+  margin: 0;
+  font:
+    500 17px/1.45 "Helvetica Neue",
+    Arial,
+    sans-serif;
+  color: #f1f5fc;
+}
+.ask-basis {
+  margin: 10px 0 0;
+  font:
+    12px/1.65 "Helvetica Neue",
+    Arial,
+    sans-serif;
+  color: #adbcd4;
+}
+.ask-basis strong {
+  color: #cdd9ec;
+  font-weight: 500;
+}
+.ask-meta {
+  margin: 9px 0 0;
+  font:
+    10px/1.6 ui-monospace,
+    monospace;
+  color: #8294b0;
+}
+.ask-meta code {
+  font-family: inherit;
+  color: #b9c7de;
+}
+.ws .ask-record {
+  display: block;
+  width: 100%;
+  text-align: left;
+  background: none;
+  border: 0;
+  border-top: 1px solid #222e42;
+  padding: 13px 0;
+  cursor: pointer;
+}
+.ws .ask-record:hover .ask-record-head {
+  color: #d6ef71;
+}
+.ask-record-head {
+  display: block;
+  font:
+    500 13px/1.4 "Helvetica Neue",
+    Arial,
+    sans-serif;
+  color: #e9eefa;
+}
+.ask-record-head em {
+  font-style: normal;
+  font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
+  font-size: 10px;
+  color: #d6ef71;
+  margin-right: 10px;
+}
+.ask-record-meta {
+  display: block;
+  margin-top: 5px;
+  font:
+    9px/1.5 ui-monospace,
+    monospace;
+  color: #7f90ac;
+}
+.ask-record-excerpt {
+  display: block;
+  margin-top: 7px;
+  font:
+    12px/1.65 "Helvetica Neue",
+    Arial,
+    sans-serif;
+  color: #9dacc6;
+}
+.ask-withheld {
+  margin: 16px 0 0;
+  padding: 11px 14px;
+  border: 1px solid #5d5030;
+  background: #241f12;
+  font:
+    11px/1.6 "Helvetica Neue",
+    Arial,
+    sans-serif;
+  color: #e3c684;
+}
+.ask-none {
+  margin: 0;
+  font:
+    500 16px/1.4 "Helvetica Neue",
+    Arial,
+    sans-serif;
+  color: #e9eefa;
+}
+.ask-limitation {
+  margin: 16px 0 0;
+  font:
+    10px/1.7 ui-monospace,
+    monospace;
+  color: #7787a3;
+}
+@media (max-width: 700px) {
+  .ask {
+    padding: 20px 18px;
+  }
+  .ask-form {
+    flex-direction: column;
+  }
+  .ask-form button {
+    padding: 13px 24px;
+  }
+}
+.ask-outstanding .ask-state {
+  margin-bottom: 14px;
+}
+.ask-outstanding .ask-recorded {
+  font-size: 14px;
+}
+.ask-outstanding .ask-basis {
+  color: #cdd9ec;
+  font-size: 13px;
+  margin-top: 5px;
+}
+
+/* A written answer is the one thing on this page that is NOT verbatim, so it
+   is marked as such above and below rather than blending into the quotes. */
+.ask-written {
+  border: 1px solid #4a5d7e;
+  border-left: 3px solid #8fb4ff;
+  background: #121d33;
+  padding: 16px 18px;
+  margin-bottom: 22px;
+}
+.ask-written .ask-label {
+  color: #9dbaf0;
+}
+.ask-written p {
+  margin: 0;
+  font:
+    15px/1.6 "Helvetica Neue",
+    Arial,
+    sans-serif;
+  color: #eef3fc;
+}
+.ask-written-foot {
+  margin-top: 11px !important;
+  font:
+    10px/1.7 ui-monospace,
+    monospace !important;
+  color: #8496b4 !important;
+}
+.ask-pending {
+  margin: 0 0 14px;
+  font:
+    11px ui-monospace,
+    monospace;
+  color: #8a9ab6;
+}
+.ask-unconfigured {
+  margin: 0 0 18px;
+  padding: 10px 13px;
+  border: 1px dashed #3c4c68;
+  font:
+    10px/1.7 ui-monospace,
+    monospace;
+  color: #8496b4;
+}

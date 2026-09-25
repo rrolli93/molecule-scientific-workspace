@@ -1,0 +1,123 @@
+/* The signature element. A margin column of evidential standing, set against
+   the item in the record's own serif. Everything else on the page stays quiet
+   so this is the thing you remember. */
+.ws .ledger {
+  margin: 0;
+}
+.ws .ledger-title {
+  font:
+    500 13px/1 var(--rec-mono);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--rec-faint);
+  margin: 0 0 18px;
+}
+.ws .ledger-rows {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid var(--rec-rule);
+}
+.ws .ledger-row {
+  display: grid;
+  grid-template-columns: 4px 118px minmax(180px, 0.9fr) minmax(0, 1.5fr);
+  align-items: baseline;
+  gap: 0 18px;
+  padding: 13px 0 14px;
+  border-bottom: 1px solid var(--rec-rule);
+}
+/* The mark is a short rule in the margin, the way a reviewer scores a line. */
+.ws .ledger-mark {
+  align-self: stretch;
+  background: var(--rec-faint);
+}
+.ws .ledger-status {
+  font:
+    500 12px/1.5 var(--rec-mono);
+  letter-spacing: 0.06em;
+  color: var(--rec-faint);
+  white-space: nowrap;
+}
+.ws .ledger-item {
+  font:
+    500 17px/1.4 var(--rec-display);
+  letter-spacing: -0.005em;
+  color: var(--rec-ink);
+}
+.ws .ledger-said {
+  font:
+    400 13.5px/1.6 var(--rec-body);
+  color: var(--rec-soft);
+}
+.ws .ledger-row.is-recorded .ledger-mark {
+  background: var(--rec-recorded);
+}
+.ws .ledger-row.is-recorded .ledger-status {
+  color: var(--rec-recorded);
+}
+.ws .ledger-row.is-unconfirmed .ledger-mark,
+.ws .ledger-row.is-open .ledger-mark {
+  background: var(--rec-pending);
+}
+.ws .ledger-row.is-unconfirmed .ledger-status,
+.ws .ledger-row.is-open .ledger-status {
+  color: var(--rec-pending);
+}
+.ws .ledger-row.is-absent .ledger-mark {
+  background: var(--rec-absent);
+}
+.ws .ledger-row.is-absent .ledger-status {
+  color: var(--rec-absent);
+}
+/* An absent result is the one thing worth reading as a statement, not a row. */
+.ws .ledger-row.is-absent .ledger-item {
+  color: var(--rec-absent);
+}
+.ws .ledger-foot {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 18px;
+  flex-wrap: wrap;
+  margin: 15px 0 0;
+  font:
+    400 12px/1.6 var(--rec-mono);
+  color: var(--rec-faint);
+}
+.ws .ledger-foot code {
+  font-family: var(--rec-mono);
+  color: var(--rec-soft);
+}
+.ws .ledger-foot button {
+  background: none;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+  font:
+    400 12px/1.6 var(--rec-mono);
+  color: var(--rec-link);
+  border-bottom: 1px solid color-mix(in srgb, var(--rec-link) 35%, transparent);
+  border-radius: 0;
+}
+.ws .ledger-foot button:hover {
+  border-bottom-color: var(--rec-link);
+}
+@media (max-width: 880px) {
+  .ws .ledger-row {
+    grid-template-columns: 3px 1fr;
+    gap: 0 14px;
+    padding: 12px 0;
+  }
+  .ws .ledger-status {
+    grid-column: 2;
+    order: -1;
+    margin-bottom: 3px;
+  }
+  .ws .ledger-item,
+  .ws .ledger-said {
+    grid-column: 2;
+  }
+  .ws .ledger-said {
+    margin-top: 4px;
+  }
+}

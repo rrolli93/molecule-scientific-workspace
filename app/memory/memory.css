@@ -1,0 +1,249 @@
+.memory-shell {
+  min-height: 100vh;
+}
+.memory-header {
+  position: static;
+  display: flex;
+  justify-content: space-between;
+  padding: 22px 5%;
+  height: auto;
+  background: #f0f3eb;
+  border-bottom: 1px solid var(--line);
+  gap: 20px;
+}
+.memory-banner {
+  padding: 14px 5%;
+  background: #f5f1df;
+  font-size: 12px;
+  color: #625f44;
+}
+.memory-banner b {
+  margin-right: 14px;
+  letter-spacing: 1px;
+}
+.memory-main {
+  max-width: 1400px;
+  margin: auto;
+  padding: 36px 5%;
+}
+.memory-main h1 {
+  font-family: Georgia, serif;
+  font-size: 42px;
+  font-weight: 400;
+  line-height: 1.12;
+  margin: 15px 0;
+}
+.memory-main h2 {
+  font-family: Georgia, serif;
+  font-weight: 400;
+  font-size: 27px;
+  line-height: 1.2;
+  margin: 14px 0;
+}
+.memory-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.memory-heading {
+  margin-bottom: 24px;
+}
+.memory-heading p {
+  color: var(--muted);
+}
+.memory-toolbar {
+  border-block: 1px solid var(--line);
+  padding: 12px 0;
+  color: var(--muted);
+  font-size: 12px;
+  overflow-wrap: anywhere;
+}
+.memory-stats {
+  display: flex;
+  gap: 32px;
+  padding: 24px 0;
+  flex-wrap: wrap;
+}
+.memory-stats b {
+  font-family: Georgia, serif;
+  font-size: 27px;
+  padding-right: 6px;
+}
+.memory-tabs {
+  display: flex;
+  gap: 8px;
+  border-bottom: 1px solid var(--line);
+  margin-bottom: 22px;
+}
+.memory-tabs button {
+  border: 0;
+  background: transparent;
+  padding: 14px 20px;
+  color: var(--muted);
+}
+.memory-tabs [aria-current] {
+  color: var(--green);
+  border-bottom: 3px solid var(--green);
+  font-weight: 700;
+}
+.memory-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr);
+  gap: 24px;
+  align-items: start;
+}
+.memory-card {
+  border: 1px solid var(--line);
+  background: white;
+  border-radius: 12px;
+  padding: 26px;
+  margin-bottom: 22px;
+  overflow-wrap: anywhere;
+}
+.memory-card > p {
+  color: var(--muted);
+}
+.memory-claim {
+  border-top: 1px solid var(--line);
+  padding: 18px 0;
+}
+.memory-claim p {
+  margin: 8px 0;
+}
+.memory-main small {
+  color: var(--muted);
+  font-size: 12px;
+}
+.memory-main .primary {
+  background: var(--green);
+  color: white;
+  border: 1px solid var(--green);
+  border-radius: 6px;
+  padding: 12px 16px;
+}
+.memory-main .outline-button {
+  border: 1px solid #c8d4c6;
+  background: white;
+  color: var(--green);
+  border-radius: 6px;
+  padding: 12px 16px;
+}
+.memory-help {
+  display: block;
+  margin-top: 12px;
+}
+.memory-note {
+  display: block;
+  margin: 16px 0;
+  font-size: 13px;
+}
+.memory-note textarea {
+  display: block;
+  width: 100%;
+  min-height: 88px;
+  margin-top: 8px;
+  border: 1px solid #c8d4c6;
+  border-radius: 6px;
+  padding: 12px;
+  resize: vertical;
+}
+.memory-actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin: 12px 0;
+}
+.memory-select {
+  display: block;
+  margin: 20px 0;
+  font-size: 12px;
+}
+.memory-select select {
+  display: block;
+  margin-top: 8px;
+  width: 100%;
+  padding: 10px;
+  border: 1px solid var(--line);
+  background: var(--paper);
+  border-radius: 6px;
+}
+.memory-error {
+  padding: 16px;
+  background: #fff0eb;
+  border: 1px solid #d49b82;
+  border-radius: 6px;
+  margin-top: 16px;
+}
+.memory-saved {
+  padding: 14px;
+  background: #eef4e8;
+  border-radius: 6px;
+  margin: 14px 0;
+}
+.memory-saved small {
+  display: block;
+  margin-top: 8px;
+}
+.memory-context details {
+  border-top: 1px solid var(--line);
+  padding: 16px 0;
+}
+.memory-context summary {
+  cursor: pointer;
+  font-weight: 600;
+}
+.memory-source {
+  padding: 16px 0;
+  scroll-margin-top: 20px;
+}
+.memory-source small {
+  display: block;
+  margin-top: 4px;
+}
+.memory-source p {
+  font-size: 13px;
+}
+.memory-links {
+  display: flex;
+  gap: 12px;
+  color: var(--green);
+  font-size: 12px;
+}
+.memory-event {
+  border-left: 2px solid #b4c6a3;
+  padding: 4px 0 20px 16px;
+  margin: 20px 0;
+}
+.memory-event button {
+  display: block;
+  margin-top: 12px;
+}
+.memory-footer {
+  color: var(--muted);
+  border-top: 1px solid var(--line);
+  padding: 24px 0;
+  font-size: 12px;
+}
+@media (max-width: 800px) {
+  .memory-grid {
+    grid-template-columns: 1fr;
+  }
+  .memory-main h1 {
+    font-size: 34px;
+  }
+  .memory-card {
+    padding: 20px;
+  }
+  .memory-stats {
+    gap: 16px;
+  }
+  .memory-header .brand {
+    font-size: 23px;
+    padding: 0;
+  }
+  .memory-header {
+    font-size: 12px;
+  }
+}

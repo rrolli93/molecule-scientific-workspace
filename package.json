@@ -1,0 +1,50 @@
+{
+  "name": "site-creator-vinext-starter",
+  "version": "0.1.0",
+  "private": true,
+  "engines": {
+    "node": ">=22.13.0"
+  },
+  "scripts": {
+    "dev": "vinext dev",
+    "build": "vinext build",
+    "start": "vinext start",
+    "lint": "eslint . --ignore-pattern dist --ignore-pattern .next",
+    "db:generate": "drizzle-kit generate",
+    "audience:internal": "node scripts/select-audience.mjs internal",
+    "audience:shared": "node scripts/select-audience.mjs shared",
+    "build:shared": "node scripts/select-audience.mjs shared && npm run build && node scripts/check-bundle-leak.mjs",
+    "check:leak": "node scripts/check-bundle-leak.mjs"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.128.0",
+    "next": "^16.3.5",
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0"
+  },
+  "devDependencies": {
+    "@cloudflare/vite-plugin": "1.57.3",
+    "@cloudflare/workers-types": "^5.20260923.1",
+    "@modelcontextprotocol/sdk": "^1.30.0",
+    "@playwright/test": "^1.63.0",
+    "@tailwindcss/postcss": "4.2.1",
+    "@types/node": "22.19.19",
+    "@types/react": "19.2.14",
+    "@types/react-dom": "19.2.3",
+    "@vitejs/plugin-react": "6.0.2",
+    "@vitejs/plugin-rsc": "0.5.26",
+    "drizzle-kit": "0.31.10",
+    "drizzle-orm": "0.45.2",
+    "eslint": "9.39.4",
+    "eslint-config-next": "16.2.6",
+    "prettier": "^3.9.7",
+    "react-server-dom-webpack": "^19.3.0",
+    "tailwindcss": "4.2.1",
+    "typescript": "5.9.3",
+    "vinext": "0.0.50",
+    "vite": "8.3.0",
+    "wrangler": "4.136.3",
+    "zod": "^4.6.5"
+  },
+  "type": "module"
+}
